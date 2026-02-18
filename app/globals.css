@@ -33,4 +33,16 @@ a {
   text-decoration: none;
   color: inherit;
 }
+/* Velvet Paper Grain Texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/noise.png");
+  background-repeat: repeat;
+  opacity: 0.25; 
+  pointer-events: none;
+  z-index: 9999;
+}
+
 
