@@ -1,156 +1,76 @@
 export default function Home() {
+  const instaBase = "https://www.instagram.com/tillyandroonorfolk";
+
+  const scents = [
+    "SUNDAY LINEN",
+    "CASHMERE MORNINGS",
+    "QUIET HOUSE",
+    "AMBER HEARTH",
+    "WOODSMOKE WOOL",
+    "GREENHOUSE CALM",
+    "AUTUMN FOLDED BLANKETS",
+    "CLEAN SKIN",
+    "SUNLIT CITRUS",
+    "PINK POP",
+    "GREEN ESCAPE",
+    "BERRY SILK",
+    "EVENING MOJITO",
+    "MIDNIGHT BEACH",
+  ];
+
   return (
     <main className="min-h-screen bg-white text-black">
 
-      {/* Hero */}
-      <section className="max-w-4xl mx-auto px-6 py-36 text-center">
-        <p className="text-xs tracking-[0.35em] text-black/50 uppercase mb-8">
-          Hand Poured · Norfolk · Small Batch Studio
-        </p>
-
-        <h1 className="text-5xl md:text-6xl tracking-[0.1em]">
+      {/* Header */}
+      <section className="max-w-4xl mx-auto px-6 py-20 md:py-36 text-center">
+        <h1 className="text-3xl md:text-6xl tracking-[0.05em] md:tracking-[0.1em] whitespace-nowrap">
           TILLY AND ROO
         </h1>
 
-        <p className="mt-10 text-lg text-black/70 max-w-xl mx-auto leading-relaxed">
-          Wax melts crafted for quiet evenings, fresh linen mornings
-          and homes that feel calm, warm and beautifully scented.
+        <p className="mt-6 text-sm md:text-base text-black/60">
+          Clamshell £4.75 or 3 for £12 · Snap Bar £2.50 or 5 for £10
         </p>
       </section>
 
+      {/* Products */}
+      <section className="py-10 md:py-20 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-14">
 
-      {/* COSY EDIT */}
-      <section className="py-32 px-6 bg-[#F5F6F3]">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl tracking-[0.25em] mb-24 text-center text-[#7C8A6A]">
-            COSY EDIT
-          </h2>
+          {scents.map((name) => (
+            <div
+              key={name}
+              className="bg-[#F5F6F3] p-6 md:p-10 rounded-xl border border-black/5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
 
-          <div className="grid md:grid-cols-2 gap-14">
+              <img
+                src="/images/clamshell.jpg"
+                alt={name}
+                className="w-full mb-6 rounded-lg"
+              />
 
-            {[
-              ["SUNDAY LINEN",
-                "Softly fresh and comforting. Clean cotton sheets and fresh air are wrapped in gentle warmth, creating that just-washed, slow Sunday morning feeling.",
-                "Cotton · Fresh Air · Soft Musk"
-              ],
-              ["CASHMERE MORNINGS",
-                "Smooth, cosy and quietly luxurious. Warm amber and soft cashmere notes settle into a creamy, comforting warmth that feels calm and elegant.",
-                "Amber · Cashmere · Vanilla"
-              ],
-              ["QUIET HOUSE",
-                "Peaceful and tender. Fresh laundry and clean cotton blend with soft powdery notes for a soothing, barely-there scent that feels like a calm, tidy home.",
-                "Clean Cotton · Powder · White Musk"
-              ],
-              ["AMBER HEARTH",
-                "Rich and inviting. Juicy dark plum melts into golden amber and soft vanilla, creating a warm, glowing scent that feels cosy, deep and comforting.",
-                "Plum · Amber · Vanilla"
-              ],
-              ["WOODSMOKE WOOL",
-                "Warm, smoky and softly sweet. Toasted woods and gentle embers are softened with creamy vanilla, giving a fireside feel without harsh or heavy woods.",
-                "Smoked Woods · Embers · Creamy Vanilla"
-              ],
-              ["GREENHOUSE CALM",
-                "Clean, green and serene. Cool birch woods blend with light floral freshness for a calm, airy scent that feels natural, balanced and restorative.",
-                "Birch Wood · Soft Florals · Green Leaves"
-              ],
-              ["AUTUMN FOLDED BLANKETS",
-                "Softly fruity and warm. Crisp orchard fruits are wrapped in cashmere-like warmth, creating a cosy autumn scent that feels comforting and familiar.",
-                "Apple · Pear · Soft Spice"
-              ]
-            ].map(([name, description, notes]) => (
-              <div
-                key={name}
-                className="bg-white p-10 rounded-xl border border-black/5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              <h3 className="text-lg md:text-xl tracking-[0.15em] mb-4">
+                {name}
+              </h3>
+
+              <p className="text-sm text-black/70 mb-6">
+                £4.75 Clamshell · 3 for £12
+                <br />
+                £2.50 Snap Bar · 5 for £10
+              </p>
+
+              <a
+                href={instaBase}
+                target="_blank"
+                className="inline-block px-6 py-3 bg-black text-white text-xs tracking-[0.2em] rounded-full hover:bg-[#7C8A6A] transition-all"
               >
-                <h3 className="text-xl tracking-[0.15em] mb-6">
-                  {name}
-                </h3>
+                ORDER VIA INSTAGRAM
+              </a>
 
-                <p className="text-black/70 leading-loose text-base">
-                  {description}
-                </p>
+            </div>
+          ))}
 
-                <div className="mt-8 pt-6 border-t border-black/5">
-                  <p className="text-xs tracking-[0.25em] text-[#7C8A6A] uppercase">
-                    {notes}
-                  </p>
-                </div>
-              </div>
-            ))}
-
-          </div>
         </div>
       </section>
-
-
-      {/* FRESH EDIT */}
-      <section className="py-32 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl tracking-[0.25em] mb-24 text-center text-[#7C8A6A]">
-            FRESH EDIT
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-14">
-
-            {[
-              ["CLEAN SKIN",
-                "Fresh, soft and comforting. Clean cotton and airy freshness melt into a gentle skin-like softness that feels light, modern and effortlessly clean.",
-                "Clean Cotton · White Musk · Fresh Air"
-              ],
-              ["SUNLIT CITRUS",
-                "Bright and uplifting. Juicy citrus zest meets soft green freshness, creating a clean, vibrant scent that feels warm, fresh and full of light.",
-                "Lemon · Orange Peel · Green Notes"
-              ],
-              ["PINK POP",
-                "Playful and sweet. Sugared pineapple and ripe strawberries swirl together into a fun, creamy fruit scent that feels bright, cheerful and indulgent.",
-                "Pineapple · Strawberry · Cream"
-              ],
-              ["GREEN ESCAPE",
-                "Fresh, green and spa-clean. Watery botanicals and cool herbal air create a calm, leafy scent that feels cleansing, natural and relaxing.",
-                "Eucalyptus · Green Leaves · Herbal Notes"
-              ],
-              ["BERRY SILK",
-                "Smooth and elegant. Juicy dark berries are softened with creamy vanilla and a hint of coastal freshness, creating a rich yet airy fruity blend.",
-                "Blackberry · Vanilla · Coastal Air"
-              ],
-              ["EVENING MOJITO",
-                "Zesty and refreshing. Bright citrus notes are lifted with soft herbal freshness for a clean, energising scent that feels crisp and uplifting.",
-                "Lime · Mint · Citrus Zest"
-              ],
-              ["MIDNIGHT BEACH",
-                "Warm and atmospheric. Smoky embers and toasted woods blend with smooth sandalwood and a hint of citrus, evoking a beach fire after dark.",
-                "Sandalwood · Toasted Woods · Citrus Peel"
-              ]
-            ].map(([name, description, notes]) => (
-              <div
-                key={name}
-                className="bg-[#F5F6F3] p-10 rounded-xl border border-black/5 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <h3 className="text-xl tracking-[0.15em] mb-6">
-                  {name}
-                </h3>
-
-                <p className="text-black/70 leading-loose text-base">
-                  {description}
-                </p>
-
-                <div className="mt-8 pt-6 border-t border-black/5">
-                  <p className="text-xs tracking-[0.25em] text-[#7C8A6A] uppercase">
-                    {notes}
-                  </p>
-                </div>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* Footer */}
-      <footer className="py-16 text-center text-sm text-black/50 tracking-[0.25em] bg-white border-t border-black/5">
-        © {new Date().getFullYear()} TILLY AND ROO · NORFOLK
-      </footer>
 
     </main>
   );
